@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -65,7 +67,61 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="images/portfolio-details/1.jpg" class="img-responsive" alt="">
+                        <div id="main" style="width: 552px;height:577px;"></div>
+                        <script type="text/javascript">
+                        var myChart = echarts.init(document.getElementById('main'));
+
+                        var option = {
+                            title:{
+                                text:'number of facilities per facility type'
+                            },
+                            tooltip:{
+                                trigger:'axis',
+                                axisPointer:{
+                                    type:'shadow'
+                                }
+                            },
+                            grid:{
+                                left:'3%',
+                                right:'4%',
+                                containLabel:true
+                            },
+                            xAxis:{
+                                type:'value',
+                                boundaryGap: [0,0.01]
+                            },
+                            yAxis:{
+                                type:'category',
+                                data: ["FOOD MKT RETAIL (25-1,999 SF) LOW RISK",
+                                "FOOD MKT RETAIL (25-1,999 SF) MODERATE RISK",
+                                "FOOD MKT RETAIL (25-1,999 SF) HIGH RISK",
+                                "FOOD MKT RETAIL (2,000+ SF) LOW RISK",
+                                "FOOD MKT RETAIL (2,000+ SF) MODERATE RISK",
+                                "FOOD MKT RETAIL (2,000+ SF) HIGH RISK",
+                                "RESTAURANT (0-30) SEATS LOW RISK",
+                                "RESTAURANT (0-30) SEATS MODERATE RISK",
+                                "RESTAURANT (0-30) SEATS HIGH RISK",
+                                "RESTAURANT (31-60) SEATS LOW RISK",
+                                "RESTAURANT (31-60) SEATS MODERATE RISK",
+                                "RESTAURANT (31-60) SEATS HIGH RISK",
+                                "RESTAURANT (61-150) SEATS LOW RISK",
+                                "RESTAURANT (61-150) SEATS MODERATE RISK",
+                                "RESTAURANT (61-150) SEATS HIGH RISK",
+                                "RESTAURANT (151 + ) SEATS LOW RISK",
+                                "RESTAURANT (151 + ) SEATS MODERATE RISK",
+                                "RESTAURANT (151 + ) SEATS HIGH RISK"
+                                ]
+                            },
+                            series:[
+                                {
+                                    name:"number of facilities per facility type",
+                                    type:'bar',
+                                    data: [2110, 151, 395, 547, 50, 172, 527, 1811, 2072, 192, 341, 1368, 105, 189, 1011, 35, 52, 355]
+                                }
+                            ]
+                        };
+                        myChart.setOption(option);
+                        </script>
                 </div>
                 <div class="col-sm-6">
                     <div class="project-name overflow">
