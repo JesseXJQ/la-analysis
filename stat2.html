@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <!-- 引入 ECharts 文件 -->
@@ -10,33 +11,36 @@
     <title>Portfolio Details | Triangle</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/lightbox.css" rel="stylesheet"> 
-    <link href="css/animate.min.css" rel="stylesheet"> 
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+    <link href="css/lightbox.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
-	    <script src="js/html5shiv.js"></script>
-	    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-</head><!--/head-->
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!--/head-->
 
 <body>
-	<header id="header">      
-        <div class="navbar navbar-inverse" role="banner">
-            <div class="navbar-header">
+    <header id="header">
+        <div class="container">
+            <div class="navbar navbar-inverse" role="banner">
+                <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
                         <h1><img src="images/logo.jpg" alt="logo" style="width:500px;height:100px;"></h1>
-                    </a>   
+                    </a>
                 </div>
-            <div class="container">
+
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html">Home</a></li>                       
-                        <li class="active"><a href="stat1.html">Stat1</a></li>  
-                        <li class="active"><a href="stat2.html">Stat2</a></li>  
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="stat1.html">Stat1</a></li>
+                        <li class="active"><a href="stat2.html">Stat2</a></li>
                         <li class="active"><a href="stat3.html">Stat3</a></li>
-                        <li class="active"><a href="stat4.html">Stat4</a></li>                       
+                        <li class="active"><a href="stat4.html">Stat4</a></li>
+                        <li class="active"><a href="stat5.html">Stat5</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,103 +51,92 @@
 
     <section id="page-breadcrumb">
         <div class="vertical-center sun">
-             <div class="container">
+            <div class="container">
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
                             <h1 class="title">Stat2
-                                
+
                             </h1>
-                            <p>facilities visited per day</p>
+                            <p>Facilities Visited per day</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-   </section>
+    </section>
     <!--/#action-->
 
     <section id="portfolio-information" class="padding-top">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                        <div id="main" style="width: 552px;height:577px;"></div>
-                        <script type="text/javascript">
-                        var myChart = echarts.init(document.getElementById('main'));
+                    <div id="main" style="width: 1100px;height:500px;"></div>
+                    <script type="text/javascript">
+                    var myChart = echarts.init(document.getElementById('main'));
 
-                        var option = {
-                            title:{
-                                text:'number of facilities per facility type'
-                            },
-                            tooltip:{
-                                trigger:'axis',
-                                axisPointer:{
-                                    type:'shadow'
-                                }
-                            },
-                            grid:{
-                                left:'3%',
-                                right:'4%',
-                                containLabel:true
-                            },
-                            xAxis:{
-                                type:'value',
-                                boundaryGap: [0,0.01]
-                            },
-                            yAxis:{
-                                type:'category',
-                                data: ["FOOD MKT RETAIL (25-1,999 SF) LOW RISK",
-                                "FOOD MKT RETAIL (25-1,999 SF) MODERATE RISK",
-                                "FOOD MKT RETAIL (25-1,999 SF) HIGH RISK",
-                                "FOOD MKT RETAIL (2,000+ SF) LOW RISK",
-                                "FOOD MKT RETAIL (2,000+ SF) MODERATE RISK",
-                                "FOOD MKT RETAIL (2,000+ SF) HIGH RISK",
-                                "RESTAURANT (0-30) SEATS LOW RISK",
-                                "RESTAURANT (0-30) SEATS MODERATE RISK",
-                                "RESTAURANT (0-30) SEATS HIGH RISK",
-                                "RESTAURANT (31-60) SEATS LOW RISK",
-                                "RESTAURANT (31-60) SEATS MODERATE RISK",
-                                "RESTAURANT (31-60) SEATS HIGH RISK",
-                                "RESTAURANT (61-150) SEATS LOW RISK",
-                                "RESTAURANT (61-150) SEATS MODERATE RISK",
-                                "RESTAURANT (61-150) SEATS HIGH RISK",
-                                "RESTAURANT (151 + ) SEATS LOW RISK",
-                                "RESTAURANT (151 + ) SEATS MODERATE RISK",
-                                "RESTAURANT (151 + ) SEATS HIGH RISK"
-                                ]
-                            },
-                            series:[
-                                {
-                                    name:"number of facilities per facility type",
-                                    type:'bar',
-                                    data: [2110, 151, 395, 547, 50, 172, 527, 1811, 2072, 192, 341, 1368, 105, 189, 1011, 35, 52, 355]
-                                }
+                    var option = {
+                        title: {
+                            text: 'number of facilities per facility type'
+                        },
+                        tooltip: {
+                            trigger: 'axis',
+                            axisPointer: {
+                                type: 'shadow'
+                            }
+                        },
+                        grid: {
+                            left: '3%',
+                            right: '4%',
+                            containLabel: true
+                        },
+                        xAxis: {
+                            type: 'value',
+                            boundaryGap: [0, 0.01]
+                        },
+                        yAxis: {
+                            type: 'category',
+                            data: [
+                                "OTHER",
+                                "FOOD MKT RETAIL HIGH RISK",
+                                "FOOD MKT RETAIL MODERATE RISK",
+                                "FOOD MKT RETAIL LOW RISK",
+                                "RESTAURANT SEATS HIGH RISK",
+                                "RESTAURANT SEATS MODERATE RISK",
+                                "RESTAURANT SEATS LOW RISK"
                             ]
-                        };
-                        myChart.setOption(option);
-                        </script>
+                        },
+                        series: [{
+                            name: "number of facilities per facility type",
+                            type: 'bar',
+                            data: [42, 2010, 776, 10081, 41792, 10578, 3251]
+                        }]
+                    };
+                    myChart.setOption(option);
+                    </script>
                 </div>
-                <div class="col-sm-6">
-                    <div class="project-name overflow">
-                        <h2 class="bold">data explanation</h2>
-                        <ul class="nav navbar-nav navbar-default">
-                            <li><a href="#"><i class="fa fa-clock-o"></i>February 24,2019</a></li>
-                        </ul>
-                    </div>
-                    <div class="project-info overflow">
-                        <h3>Numebr of facities visited per day</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Suspendisse potenti. Proin quis eros odio, dapibus dictum mauris. Donec nisi libero, adipiscing id pretium eget, consectetur sit amet leo. Nam at eros quis mi egestas fringilla non nec purus.</p>
-                        <ul class="elements">
-                            <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li><i class="fa fa-angle-right"></i> Donec tincidunt felis quis ipsum porttitor, non rutrum lorem rhoncus.</li>
-                            <li><i class="fa fa-angle-right"></i> Nam in quam consectetur nulla placerat dapibus ut ut nunc.</li>
-                        </ul>
-                    </div>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="project-name overflow">
+                    <h2 class="bold">data explanation</h2>
+                    <ul class="nav navbar-nav navbar-default">
+                        <li><a href="#"><i class="fa fa-clock-o"></i>February 24,2019</a></li>
+                    </ul>
+                </div>
+                <div class="project-info overflow">
+                    <h3>Numebr of facities visited per day</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Suspendisse potenti. Proin quis eros odio, dapibus dictum mauris. Donec nisi libero, adipiscing id pretium eget, consectetur sit amet leo. Nam at eros quis mi egestas fringilla non nec purus.</p>
+                    <ul class="elements">
+                        <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li><i class="fa fa-angle-right"></i> Donec tincidunt felis quis ipsum porttitor, non rutrum lorem rhoncus.</li>
+                        <li><i class="fa fa-angle-right"></i> Nam in quam consectetur nulla placerat dapibus ut ut nunc.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-     <!--/#portfolio-information-->
+    <!--/#portfolio-information-->
 
 
     <footer id="footer">
@@ -163,7 +156,7 @@
                                 <blockquote>Nisi commodo bresaola, leberkas venison eiusmod bacon occaecat labore tail.</blockquote>
                                 <h3><a href="#">- Jhon Kalis</a></h3>
                             </div>
-                         </div>
+                        </div>
                         <div class="media">
                             <div class="pull-left">
                                 <a href="#"><img src="images/home/profile2.png" alt=""></a>
@@ -172,24 +165,24 @@
                                 <blockquote>Capicola nisi flank sed minim sunt aliqua rump pancetta leberkas venison eiusmod.</blockquote>
                                 <h3><a href="">- Abraham Josef</a></h3>
                             </div>
-                        </div>   
-                    </div> 
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="contact-info bottom">
                         <h2>Contacts</h2>
                         <address>
-                        E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br> 
-                        Phone: +1 (123) 456 7890 <br> 
-                        Fax: +1 (123) 456 7891 <br> 
+                            E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br>
+                            Phone: +1 (123) 456 7890 <br>
+                            Fax: +1 (123) 456 7891 <br>
                         </address>
 
                         <h2>Address</h2>
                         <address>
-                        Unit C2, St.Vincent's Trading Est., <br> 
-                        Feeder Road, <br> 
-                        Bristol, BS2 0UY <br> 
-                        United Kingdom <br> 
+                            Unit C2, St.Vincent's Trading Est., <br>
+                            Feeder Road, <br>
+                            Bristol, BS2 0UY <br>
+                            United Kingdom <br>
                         </address>
                     </div>
                 </div>
@@ -205,7 +198,7 @@
                             </div>
                             <div class="form-group">
                                 <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
-                            </div>                        
+                            </div>
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-submit" value="Submit">
                             </div>
@@ -228,6 +221,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>  
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
+
 </html>

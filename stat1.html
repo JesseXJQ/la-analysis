@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-     <!-- including ECharts file -->
+    <!-- including ECharts file -->
     <script src="echarts.min.js"></script>
     <title>Portfolio Details | Triangle</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/lightbox.css" rel="stylesheet"> 
-    <link href="css/animate.min.css" rel="stylesheet"> 
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
+    <link href="css/lightbox.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>  
+    <script type="text/javascript" src="js/main.js"></script>
     <!--[if lt IE 9]>
-	    <script src="js/html5shiv.js"></script>
-	    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-</head><!--/head-->
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!--/head-->
 
 <body>
-	<header id="header">      
-        <div class="navbar navbar-inverse" role="banner">
-            <div class="navbar-header">
+    <header id="header">
+        <div class="container">
+            <div class="navbar navbar-inverse" role="banner">
+                <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
                         <h1><img src="images/logo.jpg" alt="logo" style="width:500px;height:100px;"></h1>
-                    </a>   
+                    </a>
                 </div>
-            <div class="container">
+
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html">Home</a></li>                       
-                        <li class="active"><a href="stat1.html">Stat1</a></li>  
-                        <li class="active"><a href="stat2.html">Stat2</a></li>  
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="stat1.html">Stat1</a></li>
+                        <li class="active"><a href="stat2.html">Stat2</a></li>
                         <li class="active"><a href="stat3.html">Stat3</a></li>
-                        <li class="active"><a href="stat4.html">Stat4</a></li>                       
+                        <li class="active"><a href="stat4.html">Stat4</a></li>
+                        <li class="active"><a href="stat5.html">Stat5</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,7 +57,7 @@
 
     <section id="page-breadcrumb">
         <div class="vertical-center sun">
-             <div class="container">
+            <div class="container">
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
@@ -64,128 +68,129 @@
                 </div>
             </div>
         </div>
-   </section>
+    </section>
     <!--/#action-->
 
     <section id="portfolio-information" class="padding-top">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                        <div id="main" style="width: 550px;height:400px;"></div>
-                        <script type="text/javascript">
-                            var myChart = echarts.init(document.getElementById('main'));
-                            myChart.showLoading();
-                            $.get('./data/res1.json', function (data) {
-                                myChart.hideLoading();
-                                myChart.setOption(option = {
-                                    title: {
-                                        text: 'Number of facilities visited per day'
+                    <div id="main" style="width: 1200px;height:600px;"></div>
+                    <script type="text/javascript">
+                    var myChart = echarts.init(document.getElementById('main'));
+                    myChart.showLoading();
+                    $.get('./data/res1.json', function (data) {
+                        myChart.hideLoading();
+                        myChart.setOption(option = {
+                            title: {
+                                text: 'Number of facilities visited per day'
+                            },
+                            tooltip: {
+                                trigger: 'axis'
+                            },
+                            xAxis: {
+                                data: data.map(function (item) {
+                                    return item[0];
+                                })
+                            },
+                            yAxis: {
+                                splitLine: {
+                                    show: false
+                                }
+                            },
+                            toolbox: {
+                                left: 'center',
+                                feature: {
+                                    dataZoom: {
+                                        yAxisIndex: 'none'
                                     },
-                                    tooltip: {
-                                        trigger: 'axis'
-                                    },
-                                    xAxis: {
-                                        data: data.map(function (item) {
-                                            return item[0];
-                                        })
-                                    },
-                                    yAxis: {
-                                        splitLine: {
-                                            show: false
-                                        }
-                                    },
-                                    toolbox: {
-                                        left: 'center',
-                                        feature: {
-                                            dataZoom: {
-                                                yAxisIndex: 'none'
-                                            },
-                                            restore: {},
-                                            saveAsImage: {}
-                                        }
-                                    },
-                                    dataZoom: [{
-                                        startValue: '2014-06-01'
+                                    restore: {},
+                                    saveAsImage: {}
+                                }
+                            },
+                            dataZoom: [{
+                                startValue: '2014-06-01'
+                            }, {
+                                type: 'inside'
+                            }],
+                            visualMap: {
+                                top: 10,
+                                right: 10,
+                                pieces: [{
+                                    gt: 0,
+                                    lte: 50,
+                                    color: '#096'
+                                }, {
+                                    gt: 50,
+                                    lte: 100,
+                                    color: '#ffde33'
+                                }, {
+                                    gt: 100,
+                                    lte: 150,
+                                    color: '#ff9933'
+                                }, {
+                                    gt: 150,
+                                    lte: 200,
+                                    color: '#cc0033'
+                                }, {
+                                    gt: 200,
+                                    lte: 300,
+                                    color: '#660099'
+                                }, {
+                                    gt: 300,
+                                    color: '#7e0023'
+                                }],
+                                outOfRange: {
+                                    color: '#999'
+                                }
+                            },
+                            series: {
+                                name: 'Number of facilities visited per day',
+                                type: 'line',
+                                data: data.map(function (item) {
+                                    return item[1];
+                                }),
+                                markLine: {
+                                    silent: true,
+                                    data: [{
+                                        yAxis: 50
                                     }, {
-                                        type: 'inside'
-                                    }],
-                                    visualMap: {
-                                        top: 10,
-                                        right: 10,
-                                        pieces: [{
-                                            gt: 0,
-                                            lte: 50,
-                                            color: '#096'
-                                        }, {
-                                            gt: 50,
-                                            lte: 100,
-                                            color: '#ffde33'
-                                        }, {
-                                            gt: 100,
-                                            lte: 150,
-                                            color: '#ff9933'
-                                        }, {
-                                            gt: 150,
-                                            lte: 200,
-                                            color: '#cc0033'
-                                        }, {
-                                            gt: 200,
-                                            lte: 300,
-                                            color: '#660099'
-                                        }, {
-                                            gt: 300,
-                                            color: '#7e0023'
-                                        }],
-                                        outOfRange: {
-                                            color: '#999'
-                                        }
-                                    },
-                                    series: {
-                                        name: 'Number of facilities visited per day',
-                                        type: 'line',
-                                        data: data.map(function (item) {
-                                            return item[1];
-                                        }),
-                                        markLine: {
-                                            silent: true,
-                                            data: [{
-                                                yAxis: 50
-                                            }, {
-                                                yAxis: 100
-                                            }, {
-                                                yAxis: 150
-                                            }, {
-                                                yAxis: 200
-                                            }, {
-                                                yAxis: 300
-                                            }]
-                                        }
-                                    }
-                                });
-                            });
-                        </script>
+                                        yAxis: 100
+                                    }, {
+                                        yAxis: 150
+                                    }, {
+                                        yAxis: 200
+                                    }, {
+                                        yAxis: 300
+                                    }]
+                                }
+                            }
+                        });
+                    });
+                    </script>
                 </div>
-                <div class="col-sm-6">
-                    <div class="project-name overflow">
-                        <h2 class="bold">data explanation</h2>
-                        <ul class="nav navbar-nav navbar-default">
-                            <li><a href="#"><i class="fa fa-clock-o"></i>February 24,2019</a></li>
-                        </ul>
-                    </div>
-                    <div class="project-info overflow">
-                        <h3>Numebr of facities visited per day</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Suspendisse potenti. Proin quis eros odio, dapibus dictum mauris. Donec nisi libero, adipiscing id pretium eget, consectetur sit amet leo. Nam at eros quis mi egestas fringilla non nec purus.</p>
-                        <ul class="elements">
-                            <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li><i class="fa fa-angle-right"></i> Donec tincidunt felis quis ipsum porttitor, non rutrum lorem rhoncus.</li>
-                            <li><i class="fa fa-angle-right"></i> Nam in quam consectetur nulla placerat dapibus ut ut nunc.</li>
-                        </ul>
-                    </div>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="project-name overflow">
+                    <h2 class="bold">data explanation</h2>
+                    <ul class="nav navbar-nav navbar-default">
+                        <li><a href="#"><i class="fa fa-clock-o"></i>February 24,2019</a></li>
+                    </ul>
+                </div>
+                <div class="project-info overflow">
+                    <h3>Numebr of facities visited per day</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Suspendisse potenti. Proin quis eros odio, dapibus dictum mauris. Donec nisi libero, adipiscing id pretium eget, consectetur sit amet leo. Nam at eros quis mi egestas fringilla non nec purus.</p>
+                    <ul class="elements">
+                        <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li><i class="fa fa-angle-right"></i> Donec tincidunt felis quis ipsum porttitor, non rutrum lorem rhoncus.</li>
+                        <li><i class="fa fa-angle-right"></i> Nam in quam consectetur nulla placerat dapibus ut ut nunc.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-     <!--/#portfolio-information-->
+    <!--/#portfolio-information-->
 
 
     <footer id="footer">
@@ -205,7 +210,7 @@
                                 <blockquote>Nisi commodo bresaola, leberkas venison eiusmod bacon occaecat labore tail.</blockquote>
                                 <h3><a href="#">- Jhon Kalis</a></h3>
                             </div>
-                         </div>
+                        </div>
                         <div class="media">
                             <div class="pull-left">
                                 <a href="#"><img src="images/home/profile2.png" alt=""></a>
@@ -214,24 +219,24 @@
                                 <blockquote>Capicola nisi flank sed minim sunt aliqua rump pancetta leberkas venison eiusmod.</blockquote>
                                 <h3><a href="">- Abraham Josef</a></h3>
                             </div>
-                        </div>   
-                    </div> 
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="contact-info bottom">
                         <h2>Contacts</h2>
                         <address>
-                        E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br> 
-                        Phone: +1 (123) 456 7890 <br> 
-                        Fax: +1 (123) 456 7891 <br> 
+                            E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br>
+                            Phone: +1 (123) 456 7890 <br>
+                            Fax: +1 (123) 456 7891 <br>
                         </address>
 
                         <h2>Address</h2>
                         <address>
-                        Unit C2, St.Vincent's Trading Est., <br> 
-                        Feeder Road, <br> 
-                        Bristol, BS2 0UY <br> 
-                        United Kingdom <br> 
+                            Unit C2, St.Vincent's Trading Est., <br>
+                            Feeder Road, <br>
+                            Bristol, BS2 0UY <br>
+                            United Kingdom <br>
                         </address>
                     </div>
                 </div>
@@ -247,7 +252,7 @@
                             </div>
                             <div class="form-group">
                                 <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
-                            </div>                        
+                            </div>
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-submit" value="Submit">
                             </div>
@@ -268,4 +273,5 @@
 
 
 </body>
+
 </html>
