@@ -3,13 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <!-- including ECharts file -->
-    <script src="echarts.min.js"></script>
-    <title>Portfolio Details | Triangle</title>
+    <script src="js/echarts.min.js"></script>
+    <title>Stats1 | numbers of facilities visted per day</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/lightbox.css" rel="stylesheet">
@@ -31,14 +28,13 @@
 
 <body>
     <header id="header">
-        <div class="container">
-            <div class="navbar navbar-inverse" role="banner">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
-                        <h1><img src="images/logo.jpg" alt="logo" style="width:500px;height:100px;"></h1>
-                    </a>
-                </div>
-
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <h1><img src="images/logo.jpg" alt="logo" style="width:500px;height:100px;margin-left:105px;"></h1>
+                </a>
+            </div>
+            <div class="container">
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="index.html">Home</a></li>
@@ -61,8 +57,7 @@
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
-                            <h1 class="title">Stat1</h1>
-                            <p>facilities visited per day</p>
+                            <h1 class="title">How many restaurants do inspectors visit everyday?</h1>
                         </div>
                     </div>
                 </div>
@@ -109,7 +104,7 @@
                                 }
                             },
                             dataZoom: [{
-                                startValue: '2014-06-01'
+                                startValue: '2016-06-01'
                             }, {
                                 type: 'inside'
                             }],
@@ -169,22 +164,20 @@
                     });
                     </script>
                 </div>
-
             </div>
-            <div class="col-sm-6">
+            <div class="col">
                 <div class="project-name overflow">
-                    <h2 class="bold">data explanation</h2>
+                    <h2 class="bold" style="font-family: Times New Roman;font-size:30px;">Data Explanation</h2>
                     <ul class="nav navbar-nav navbar-default">
-                        <li><a href="#"><i class="fa fa-clock-o"></i>February 24,2019</a></li>
+                        <li style="font-size:10px;"><i class="fa fa-clock-o"></i>March 10,2019</a></li>
                     </ul>
                 </div>
                 <div class="project-info overflow">
-                    <h3>Numebr of facities visited per day</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus nibh sed elimttis adipiscing. Fusce in hendrerit purus. Suspendisse potenti. Proin quis eros odio, dapibus dictum mauris. Donec nisi libero, adipiscing id pretium eget, consectetur sit amet leo. Nam at eros quis mi egestas fringilla non nec purus.</p>
-                    <ul class="elements">
-                        <li><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li><i class="fa fa-angle-right"></i> Donec tincidunt felis quis ipsum porttitor, non rutrum lorem rhoncus.</li>
-                        <li><i class="fa fa-angle-right"></i> Nam in quam consectetur nulla placerat dapibus ut ut nunc.</li>
+                    <h3 style="font-family: Times New Roman; font-size:20px;">Number of facilities visited per day</h3>
+                    <p style="font-family: Times New Roman;font-size:20px;">Start from 2016-06-01 to 2018-12-31, the data shows how many restaurants do inspectors visited in LA every day. The number in each column only shows the total amounts of restaurants in different health categories. From the flow of the chart, there seems to have an unstable number of inspections completed every day. Suggestions are stated below:</p>
+                    <ul class="elements" style="font-family: Times New Roman; font-size:20px;">
+                        <li><i class="fa fa-angle-right" ></i> For government use, it helps to identify the overall workload done by inspectors per day.</li>
+                        <li><i class="fa fa-angle-right"></i> For commercial use, it helps to identify when to prepare for the upcoming inspections.</li>
                     </ul>
                 </div>
             </div>
@@ -201,42 +194,30 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="testimonial bottom">
-                        <h2>Testimonial</h2>
+                        <h2 id='needhelp'>Need help?</h2>
                         <div class="media">
                             <div class="pull-left">
-                                <a href="#"><img src="images/home/profile1.png" alt=""></a>
+                                <a href="https://www.lacounty.gov/residents/health/restaurant-inspections-rating/" target='_blank'><img src="images/home/profile1.jpg" width=100% height=100% alt=""></a>
                             </div>
-                            <div class="media-body">
-                                <blockquote>Nisi commodo bresaola, leberkas venison eiusmod bacon occaecat labore tail.</blockquote>
-                                <h3><a href="#">- Jhon Kalis</a></h3>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <a href="#"><img src="images/home/profile2.png" alt=""></a>
-                            </div>
-                            <div class="media-body">
-                                <blockquote>Capicola nisi flank sed minim sunt aliqua rump pancetta leberkas venison eiusmod.</blockquote>
-                                <h3><a href="">- Abraham Josef</a></h3>
-                            </div>
-                        </div>
-                    </div>
+                         </div>
+                    </div> 
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="contact-info bottom">
                         <h2>Contacts</h2>
-                        <address>
-                            E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br>
-                            Phone: +1 (123) 456 7890 <br>
-                            Fax: +1 (123) 456 7891 <br>
-                        </address>
+                        <p>
+                            Aiyuan Li<br/>
+                            Jiaqi Xiao<br/>
+                            Yinhao He<br/>
+                            Zhihui Guo
+                        </p>
 
                         <h2>Address</h2>
                         <address>
-                            Unit C2, St.Vincent's Trading Est., <br>
-                            Feeder Road, <br>
-                            Bristol, BS2 0UY <br>
-                            United Kingdom <br>
+                        University of California, Irvine <br> 
+                        Irvine, CA 92697 <br> 
+                        United States of America <br> 
+                        949-824-5011
                         </address>
                     </div>
                 </div>
@@ -252,7 +233,7 @@
                             </div>
                             <div class="form-group">
                                 <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
-                            </div>
+                            </div>                        
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-submit" value="Submit">
                             </div>
@@ -261,7 +242,7 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="copyright-text text-center">
-                        <p>&copy; Your Company 2014. All Rights Reserved.</p>
+                        <p>&copy; IN4MATX172-team2 2019. All Rights Reserved.</p>
                         <p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
                     </div>
                 </div>
@@ -269,9 +250,5 @@
         </div>
     </footer>
     <!--/#footer-->
-
-
-
 </body>
-
 </html>
